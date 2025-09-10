@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const API_BASE = "https://interiordesignwebpage.netlify.app"
+const API_BASE = "https://everydaydesign-backend.onrender.com"
 
 document.getElementById("contact-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
