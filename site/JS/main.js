@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Lightbox for portfolio ---
   const gallery = document.getElementById("gallery");
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightbox-img");
@@ -95,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const API_BASE = "https://interiordesignwebpage.netlify.app"
 
 document.getElementById("contact-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -102,7 +102,7 @@ document.getElementById("contact-form")?.addEventListener("submit", async (e) =>
   const payload = Object.fromEntries(new FormData(form).entries());
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/contact", {
+    const res = await fetch(`${API_BASE}/contact`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(payload)
