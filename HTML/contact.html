@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Everyday Design</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div id='header-placeholder'></div>
+
+    </header>
+    <main>
+            <section class="section-card contact-card">
+      <h1>Contact Us</h1>
+      <p class="contact-intro">
+        It’s easy to contact Everyday Design. Fill out the form and we’ll get back to you soon,
+        or call us at <a href="tel:+17345364022">734-536-4022</a>.
+      </p>
+
+      <form id = "contact-form" class="contact-form" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="(###) ###-####" />
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="How can we help?" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="call-btn">Send</button>
+        </div>
+      </form>
+    </section>
+  
+
+  <div id="footer-placeholder"></div>
+  <script src="../JS/main.js"></script>
+    </main>
+    
+</body>
+</html>
