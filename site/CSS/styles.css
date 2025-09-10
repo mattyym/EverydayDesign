@@ -86,7 +86,7 @@ body{
   background:
     linear-gradient(to bottom, rgba(18,18,18,.65), rgba(18,18,18,.75)),
     radial-gradient(800px 500px at 50% -10%, rgba(212,175,55,.18), transparent 70%),
-    url("../HTML/images/hero-banner.JPEG") center/cover no-repeat;
+    url("../images/hero-banner.JPEG") center/cover no-repeat;
 }
 
 .hero-content h2{
