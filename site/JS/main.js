@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (headerPlaceholder) {
     try {
-      await inject("header-placeholder", "../components/header.html");
+      await inject("header-placeholder", "components/header.html");
       wired = wireHeader() || wired; 
     } catch (e) {
       console.error(e);
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) {
     try {
-      await inject("footer-placeholder", "../components/footer.html");
+      await inject("footer-placeholder", "components/footer.html");
     } catch (e) {
       console.error(e);
     }
