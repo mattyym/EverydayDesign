@@ -1,33 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+
 /* ===== Base / Reset ===== */
 html, body { margin: 0; padding: 0; height: 100%; }
 
-/* ===== Theme tokens (Charcoal & Brass) ===== */
+/* ===== Theme tokens (Light / Warm Minimal) ===== */
 :root{
-  --bg: #121212;                 
-  --surface: #1e1e1e;           
-  --surface-80: rgba(30,30,30,.80);
-  --text: #f0f0f0;              
-  --muted: #b0b0b0;             
-  --primary: #d4af37;           
-  --primary-600: #c19d2f;        
-  --primary-700: #a88927;        
-  --accent: #e6c46a;             
-  --border: rgba(255,255,255,.08);
-  --shadow: 0 8px 28px rgba(0,0,0,.6);
+  --bg: #f6f1eb;                 /* page background (warm off-white) */
+  --surface: #ffffff;            /* cards/sections */
+  --surface-80: rgba(255,255,255,.85);
+
+  --text: #1e1e1e;               /* primary text (near-black) */
+  --muted: #666a6f;              /* secondary text */
+
+  /* keep a soft “brass” accent but lighten it */
+  --primary: #b89557;            
+  --primary-600: #a88345;        
+  --primary-700: #8f6f37;        
+  --accent: #8c7a5b;             
+
+  --border: rgba(0,0,0,.08);
+  --shadow: 0 10px 28px rgba(0,0,0,.08);
   --radius: 12px;
 }
 
-
 body{
   background:
-    radial-gradient(1000px 700px at 20% -10%, #1a1a1a 0%, var(--bg) 70%) no-repeat fixed,
+    radial-gradient(1200px 800px at 20% -20%, #fff 0%, var(--bg) 70%) no-repeat fixed,
     var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", Roboto, Inter, system-ui, -apple-system, sans-serif;
+  font-family: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
 }
 
+/* Serif headings + brand to match screenshot */
+h1, h2, h3, .brand {
+  font-family: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* ===== Header ===== */
 .site-header {
-  position: statoc;              
+  position: statoc;              /* leave as-is to avoid functional change */
   top: 0;
   left: 0;
   right: 0;
@@ -39,14 +53,11 @@ body{
   backdrop-filter: none;
 }
 
-
 .header-inner{
   position: relative;
   display: flex;
   justify-content: space-between;   
   align-items: center;
-
-  
   padding: 0.9rem 2.25rem 0.9rem 1.25rem;
   padding-right: calc(2rem + env(safe-area-inset-right));
 }
@@ -55,13 +66,9 @@ body{
   display: flex;
   align-items: center;
   font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: .35px;
-  color: var(--primary);
+  color: var(--text);            /* darker, cleaner */
   text-decoration: none;
-
-  
-  text-shadow: 0 2px 6px rgba(0,0,0,.55);
+  text-shadow: none;             /* remove glow for crisp type */
 }
 .brand:hover{ color: var(--accent); }
 
@@ -71,17 +78,16 @@ body{
   border-radius: 50%;
   background: var(--primary);
   margin-right: 8px;
-  box-shadow: 0 0 0 4px rgba(212,175,55,.18);
+  box-shadow: 0 0 0 4px rgba(184,149,87,.12);
 }
 
 .menu-btn{
   background: none; border: 0; color: var(--text);
   font-size: 1.8rem; cursor: pointer;
   margin-right: 2px;
-  text-shadow: 0 2px 6px rgba(0,0,0,.55); 
+  text-shadow: none;
 }
 .menu-btn:hover{ color: var(--accent); }
-
 
 .menu{
   position: absolute;
@@ -100,8 +106,7 @@ body{
   padding: .45rem .75rem; border-radius: 8px;
   color: var(--text); text-decoration: none; font-weight: 600;
 }
-.menu a:hover{ background: rgba(255,255,255,.06); color: var(--accent); }
-
+.menu a:hover{ background: rgba(0,0,0,.04); color: var(--accent); }
 
 .header-bar{
   display:flex; align-items:center; justify-content:flex-end;
@@ -124,23 +129,23 @@ body{
   position: relative;
   min-height: 70vh;
   display:flex; flex-direction:column; justify-content:center; align-items:center;
-  text-align:center; color: var(--text);
+  text-align:center; color: #ffffff; /* white headline over photo, per screenshot */
   padding: 2rem;
 
-
+  /* lighten overlays so the photo feels brighter but keep contrast for text */
   background:
-    linear-gradient(to bottom, rgba(18,18,18,.65), rgba(18,18,18,.75)),
-    radial-gradient(800px 500px at 50% -10%, rgba(212,175,55,.18), transparent 70%),
+    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.45)),
+    radial-gradient(800px 500px at 50% -10%, rgba(184,149,87,.12), transparent 70%),
     url("../images/hero-banner.JPEG") center/cover no-repeat;
 }
 
 .hero-content h2{
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(2.2rem, 6vw, 3.6rem); /* slightly larger, elegant */
   margin: 0 0 .75rem;
   letter-spacing:.3px;
 }
 .hero-content p{
-  color: var(--muted);
+  color: rgba(255,255,255,.85);
   max-width: 65ch;
   margin: 0 0 1.25rem;
   line-height: 1.6;
@@ -152,14 +157,14 @@ body{
   background: var(--primary); color:#1e1e1e;
   text-decoration:none; border-radius: 999px;
   font-weight:700; letter-spacing:.3px;
-  box-shadow: 0 8px 20px rgba(212,175,55,.25);
+  box-shadow: 0 8px 20px rgba(184,149,87,.18);
   transition: transform .12s ease, background .15s ease, box-shadow .15s ease;
   cursor: pointer;
 }
 .call-btn:hover{
   background: var(--primary-600);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(212,175,55,.3);
+  box-shadow: 0 10px 24px rgba(184,149,87,.22);
 }
 .call-btn:active{ background: var(--primary-700); transform: translateY(0); }
 
@@ -177,7 +182,7 @@ body{
 .description h1{
   color: var(--text);
   text-align:center;
-  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
   margin: 0 0 .5rem;
 }
 .description p{
@@ -193,8 +198,8 @@ body{
 .cta-band{
   padding: 3rem 1rem;
   background:
-    radial-gradient(900px 400px at 50% -10%, rgba(212,175,55,.12), transparent 70%),
-    #161616;
+    radial-gradient(900px 400px at 50% -10%, rgba(184,149,87,.10), transparent 70%),
+    #faf7f2;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -210,14 +215,14 @@ body{
 /* ===== Footer ===== */
 .footer-inner {
   text-align: center;
-  color: white;
-  font-size: 20px;
-  margin: 10px;
+  color: var(--text);
+  font-size: 18px;
+  margin: 12px;
 }
 .footer-nav { text-align: center; color: var(--accent); }
 .footer-nav a {
   color: inherit; text-decoration: none;
-  padding: 0 7px 12px; font-size: 22px;
+  padding: 0 7px 12px; font-size: 18px;
 }
 
 /* ===== Contact Page ===== */
@@ -257,7 +262,7 @@ body{
 .contact-form label{ font-weight: 600; color: var(--text); }
 .contact-form input,
 .contact-form textarea{
-  background: #141414;
+  background: #fff;
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -266,11 +271,11 @@ body{
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder{ color: #8c8c8c; }
+.contact-form textarea::placeholder{ color: #9aa0a6; }
 .contact-form input:focus,
 .contact-form textarea:focus{
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(212,175,55,.18);
+  box-shadow: 0 0 0 3px rgba(184,149,87,.18);
 }
 .form-actions{
   grid-column: 1 / -1;
@@ -287,8 +292,8 @@ body{
 .about-hero{
   padding: 4.5rem 1rem 3rem;
   background:
-    radial-gradient(900px 400px at 50% -10%, rgba(212,175,55,.12), transparent 70%),
-    #161616;
+    radial-gradient(900px 400px at 50% -10%, rgba(184,149,87,.10), transparent 70%),
+    #faf7f2;
   border-bottom: 1px solid var(--border);
 }
 .about-hero-inner{
@@ -359,7 +364,7 @@ body{
 .process-steps li{
   display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start;
   padding: .75rem; border: 1px solid var(--border); border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,0));
 }
 .process-steps span{
   display: inline-grid; place-items: center;
@@ -393,40 +398,21 @@ body{
   gap: 1.25rem;
 }
 .gallery a{
-  display: block; background: #0f0f0f; border-radius: 12px; overflow: hidden;
+  display: block; background: #ffffff; border-radius: 12px; overflow: hidden;
   border: 1px solid var(--border); box-shadow: var(--shadow);
   transition: transform .12s ease, box-shadow .2s ease;
 }
 .gallery a:hover{
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.45);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
 }
 .gallery img{
   width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1 / 1;
   display: block; transition: filter .2s ease, transform .25s ease;
 }
-.gallery a:hover img{ filter: brightness(1.08); transform: scale(1.03); }
+.gallery a:hover img{ filter: brightness(1.04); transform: scale(1.02); }
 
-
-.lightbox{
-  position: fixed; inset: 0; background: rgba(0,0,0,.7);
-  display: grid; place-items: center; z-index: 10000; padding: 1rem;
-}
-.lightbox img{
-  max-width: min(92vw, 1200px); max-height: 90vh;
-  border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.65);
-  border: 1px solid var(--border);
-}
-.lightbox[hidden]{ display: none; }
-.lightbox-close{
-  position: absolute; top: 16px; right: 16px;
-  background: var(--primary); color: #1e1e1e;
-  border: none; border-radius: 999px;
-  width: 36px; height: 36px; font-size: 22px; line-height: 1;
-  cursor: pointer; box-shadow: 0 6px 16px rgba(212,175,55,.25);
-}
-
-
+/* Keep the second header override but align to light theme */
 .site-header{
   position: absolute;      
   top: 0; left: 0; right: 0;
@@ -438,8 +424,26 @@ body{
   backdrop-filter: none !important;
 }
 
+/* Overlay stays centered; image scales down to fit screen */
+.lightbox{
+  position: fixed; inset: 0; background: rgba(0,0,0,.7);
+  display: grid; place-items: center; z-index: 10000; padding: 1rem;
+}
+.lightbox[hidden]{ display:none; }
+
+.lightbox img{
+  width: auto !important;          /* override any global img { width:100% } */
+  height: auto !important;
+  max-width: min(92vw, 1200px);    /* never wider than viewport (or 1200px) */
+  max-height: 88vh;                /* leave room for close button */
+  object-fit: contain;             /* preserve aspect ratio */
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.2);
+}
+
 
 main, .section-card, .about-hero, .portfolio { scroll-margin-top: 0; }
 
-
-.brand, .menu-btn { text-shadow: 0 2px 6px rgba(0,0,0,.55); }
+/* remove heavy text shadows for cleaner look */
+.brand, .menu-btn { text-shadow: none; }

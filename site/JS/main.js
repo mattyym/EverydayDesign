@@ -68,29 +68,58 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+function initLightbox() {
   const gallery = document.getElementById("gallery");
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightbox-img");
   const lbClose = document.querySelector(".lightbox-close");
 
-  if (gallery && lb && lbImg && lbClose) {
-    gallery.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (!link) return;
-      e.preventDefault();
-      lbImg.src = link.getAttribute("href");
-      lb.hidden = false;
-    });
+  if (!gallery || !lb || !lbImg || !lbClose) return;
 
-    // close handlers
-    lb.addEventListener("click", (e) => {
-      if (e.target === lb || e.target === lbClose) lb.hidden = true;
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") lb.hidden = true;
-    });
+  // avoid double-binding
+  if (gallery.dataset.wired === "true") return;
+  gallery.dataset.wired = "true";
+
+  // open
+  gallery.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    e.preventDefault();
+    lbImg.src = link.getAttribute("href");
+    lb.hidden = false;
+  });
+
+  // close by backdrop OR button
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target === lbClose) lb.hidden = true;
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") lb.hidden = true;
+  });
+}
+
+// — keep your inject() calls —
+// after you inject the header/footer, call initLightbox() so it always wires:
+document.addEventListener("DOMContentLoaded", async () => {
+  let wired = wireHeader();
+
+  const headerPlaceholder = document.getElementById("header-placeholder");
+  if (headerPlaceholder) {
+    try {
+      await inject("header-placeholder", "components/header.html");
+      wired = wireHeader() || wired;
+    } catch (e) { console.error(e); }
   }
+
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+  if (footerPlaceholder) {
+    try {
+      await inject("footer-placeholder", "components/footer.html");
+    } catch (e) { console.error(e); }
+  }
+
+  // (re)wire lightbox after any async DOM changes
+  initLightbox();
 });
 
 
