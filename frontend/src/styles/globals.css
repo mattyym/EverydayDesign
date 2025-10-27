@@ -136,7 +136,7 @@ h1, h2, h3, .brand {
   background:
     linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.45)),
     radial-gradient(800px 500px at 50% -10%, rgba(184,149,87,.12), transparent 70%),
-    url("../images/hero-banner.JPEG") center/cover no-repeat;
+    url("/images/hero-banner.JPEG") center/cover no-repeat;
 }
 
 .hero-content h2{
