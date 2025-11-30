@@ -4,7 +4,6 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-content">
           <h2>Where everyday living meets inspired design</h2>
-          <a href="tel:+17345364022" className="call-btn">Call Now</a>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ body{
   font-family: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
 }
 
-/* Serif headings + brand to match screenshot */
+
 h1, h2, h3, .brand {
   font-family: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -41,7 +41,7 @@ h1, h2, h3, .brand {
 
 /* ===== Header ===== */
 .site-header {
-  position: statoc;              /* leave as-is to avoid functional change */
+  position: statoc;              
   top: 0;
   left: 0;
   right: 0;
@@ -327,6 +327,10 @@ h1, h2, h3, .brand {
   padding: 1.75rem;
 }
 
+.about-values {
+  font-family: Libre Baskerville, ui-serif, Georgia, 'Times New Roman', serif;
+}
+
 .about-story .about-grid{
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -341,7 +345,10 @@ h1, h2, h3, .brand {
   box-shadow: var(--shadow);
 }
 
-.about-values h2{ text-align: center; margin: 0 0 .75rem; }
+.about-copy h1{ text-align: center; margin: 0 0 .75rem; }
+
+
+.about-values h2, h1{ text-align: center; margin: 0 0 .75rem; }
 .values-list{
   display: grid;
   gap: .75rem;

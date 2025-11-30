@@ -50,7 +50,6 @@ export default function Header() {
         <nav className="menu" id="menu" hidden={!open} ref={menuRef}>
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
           <Link href="/portfolio">Portfolio</Link>
           <Link href="/contact">Contact</Link>
         </nav>
