@@ -3,7 +3,7 @@ export default function AboutPage() {
     <main>
       <section className="about-hero">
         <div className="about-hero-inner">
-          <h1>Who we are</h1>
+          <h1>About Us</h1>
           <section>
             <p>At Everyday Interiors, we believe great design doesn’t require a gut renovation or a luxury budget, 
               it starts with seeing the potential in what you already have. Whether you're preparing to sell, settling 
@@ -16,7 +16,6 @@ export default function AboutPage() {
       <section className="section-card about-story">
         <div className="about-grid">
           <div className="about-values">
-            <h1>About Us</h1>
             <p>
               Hello, I’m Laura Mullally, the heart behind Everyday Interiors.  As a passionate newcomer to the interior design world, 
               I’m turning a lifelong appreciation for beautiful, functional spaces into a growing business. 
@@ -32,7 +31,7 @@ export default function AboutPage() {
           </div>
           <figure className="about-photo">
 
-            <img src="/images/portfolio_imgs/livingspaceheadon.JPEG" alt="Living room design" loading="lazy" />
+            <img src="/images/lauraspic.jpeg" alt="Laura Personal Photo" loading="lazy" />
           </figure>
         </div>
       </section>

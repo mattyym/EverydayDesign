@@ -31,7 +31,7 @@ export default function Header() {
       <div className="header-inner">
         <Link className="brand" href="/">
           <span className="brand-mark" />
-          Everyday Interiors
+          Everyday Interiors by Laura
         </Link>
 
         <button

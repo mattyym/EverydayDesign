@@ -8,7 +8,7 @@ export default function HomePage() {
       </section>
 
       <section className="description section-card">
-        <h1>Everyday Interiors — South Lyon, MI</h1>
+        <h1>Everyday Interiors by Laura — South Lyon, MI</h1>
         <p>
           Our mission is to help homeowners, buyers, and real estate agents transform spaces through thoughtful, budget-conscious design—without the need for major renovations.
           <br /><br />
