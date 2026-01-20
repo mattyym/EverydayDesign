@@ -41,9 +41,9 @@ export default function AboutPage() {
           <div className="about-values">
             <h1>Services Offered</h1>
             <p>
-              Whether you're a homeowner prepping to sell, a buyer struggling to visualize potential, or a realtor seeking that extra edge, we deliver 
-              curated design direction and thoughtful styling that brings your space to life. From budget-friendly tweaks to cohesive, high-impact suggestions, 
-              you'll get a clear plan that’s easy to implement without a major renovation. 
+              We deliver curated design direction and thoughtful styling that brings your space to life. 
+              From budget-friendly tweaks to cohesive, high-impact suggestions, you'll get a clear plan that’s easy to 
+              implement without a major renovation. 
             </p>
 
             <p>
