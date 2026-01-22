@@ -32,8 +32,7 @@ export default function ContactPage() {
       <section className="section-card contact-card">
         <h1>Contact Us</h1>
         <p className="contact-intro">
-          It’s easy to contact Everyday Interiors. Fill out the form and we’ll get back to you soon,
-          or call us at <a href="tel:+17345364022">734-536-4022</a>.
+          It’s easy to contact Everyday Interiors. Fill out the form and we’ll get back to you soon.
         </p>
 
         <form className="contact-form" onSubmit={onSubmit} noValidate>
