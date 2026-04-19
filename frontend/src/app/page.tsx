@@ -14,8 +14,7 @@ export default function HomePage() {
           <br /><br />
           We work with all design styles and love helping clients see the potential in their homes—whether they’re selling, settling in, or simply craving a change. Our process includes a personalized walkthrough, a detailed design rendering, and a curated list of product recommendations to bring the vision to life. Our goal is to make interior design accessible, inspiring, and personal.
           <br /><br />
-          At this early stage, services are offered free of charge to build experience, gather
-          testimonials, and grow a portfolio.
+          At this early stage, services are offered at a discounted rate to build experience, gather testimonials, and grow a portfolio.
         </p>
       </section>
 

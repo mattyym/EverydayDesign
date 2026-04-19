@@ -47,7 +47,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              At this early stage, services are offered <strong>free of charge</strong> to build experience, gather testimonials, and grow a portfolio.
+              At this early stage, services are offered at a <strong>discounted rate</strong> to build experience, gather testimonials, and grow a portfolio.
             </p>
 
           </div>
